@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABBAS ZAMAN - Freelance Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* General Reset */
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:#f5f5f7;color:#2c3e50;overflow-x:hidden;}
+  a{text-decoration:none;color:inherit;}
+  button{cursor:pointer;}
+
+  /* Hero Section */
+  .hero{background:#1e3c72; color:white; text-align:center; padding:80px 20px;}
+  .hero img{width:160px;height:160px;border-radius:50%;border:5px solid rgba(255,255,255,0.3);margin-bottom:20px;}
+  .hero h1{font-size:48px; font-weight:700;margin-bottom:10px;}
+  .hero h2{font-size:24px;font-weight:400;margin-bottom:20px;opacity:0.9;}
+  .hero p{font-size:18px;margin-bottom:40px;opacity:0.85;}
+  .hero .buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+  .hero .btn{padding:16px 35px;border-radius:50px;font-weight:600;display:flex;align-items:center;gap:10px;transition:all 0.3s;}
+  .btn-whatsapp{background:#25D366;color:white;}
+  .btn-whatsapp:hover{background:#20ba5a;transform:translateY(-2px);}
+  .btn-email{background:#4a90e2;color:white;}
+  .btn-email:hover{background:#357abd;transform:translateY(-2px);}
+  
+
+  /* Section Styles */
+  section{max-width:1200px;margin:0 auto;padding:80px 20px;}
+  h2.section-title{font-size:36px;font-weight:700;text-align:center;margin-bottom:15px;color:#1e3c72;}
+  p.section-subtitle{text-align:center;color:#7f8c8d;font-size:18px;margin-bottom:50px;max-width:600px;margin-left:auto;margin-right:auto;}
+
+  /* About */
+  .about-card{background:white;padding:50px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08);max-width:800px;margin:0 auto;line-height:1.8;font-size:18px;color:#34495e;}
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px;margin-top:30px;}
+  .skill-card{background:white;padding:25px;border-radius:16px;text-align:center;transition:all 0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.06);}
+  .skill-card:hover{transform:translateY(-8px);box-shadow:0 15px 35px rgba(30,60,114,0.15);}
+  .skill-icon{font-size:48px;margin-bottom:15px;}
+  .skill-name{font-weight:600;color:#2c3e50;font-size:16px;}
+
+  /* Services */
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:30px;}
+  .service-card{background:#fff;padding:40px 30px;border-radius:20px;border:2px solid #e9ecef;transition:all 0.3s;text-align:center;}
+  .service-card:hover{border-color:#4a90e2;transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,0.1);}
+  .service-icon{font-size:56px;margin-bottom:20px;display:block;}
+  .service-title{font-size:22px;font-weight:700;margin-bottom:15px;color:#1e3c72;}
+  .service-description{color:#7f8c8d;line-height:1.6;font-size:15px;}
+
+  /* Portfolio */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-top:30px;}
+  .portfolio-item{background:white;border-radius:16px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.08);transition:all 0.3s;}
+  .portfolio-item:hover{transform:translateY(-8px);box-shadow:0 15px 35px rgba(0,0,0,0.15);}
+  .portfolio-image{width:100%;height:220px;background:#667eea;display:flex;align-items:center;justify-content:center;font-size:72px;color:white;}
+  .portfolio-info{padding:25px;text-align:center;}
+  .portfolio-title{font-size:18px;font-weight:600;color:#2c3e50;margin-bottom:8px;}
+  .portfolio-category{font-size:14px;color:#7f8c8d;}
+
+  /* Reviews */
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:30px;}
+  .review-card{background:white;padding:30px;border-radius:16px;box-shadow:0 5px 15px rgba(0,0,0,0.08);text-align:center;}
+  .review-stars{color:#f1c40f;margin-bottom:10px;font-size:18px;}
+  .review-text{color:#2c3e50;font-size:15px;line-height:1.5;}
+
+  /* Contact */
+  .contact-section{background:#1e3c72;color:white;text-align:center;}
+  .contact-text{font-size:18px;margin-bottom:40px;line-height:1.6;}
+  .contact-buttons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:40px;}
+
+  /* Footer */
+  footer{background:#1a2a3a;color:white;text-align:center;padding:30px 20px;font-size:14px;}
+
+  @media(max-width:768px){
+    .hero h1{font-size:36px;}
+    .hero h2{font-size:20px;}
+    section{padding:60px 20px;}
+    h2.section-title{font-size:28px;}
+    .skills-grid,.services-grid,.portfolio-grid,.reviews-grid{grid-template-columns:1fr;}
+
+<style>
+/* Message Box Upgrade */
+.send-message-section{
+  padding:80px 20px;
+  background:#f4f6f8;
+  text-align:center;
+}
+.message-box{
+  max-width:500px;
+  margin:auto;
+  background:#0b1c2d;
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+.message-box input,
+.message-box textarea{
+  width:100%;
+  padding:14px;
+  margin:12px 0;
+  border:none;
+  border-radius:12px;
+  font-size:15px;
+  outline:none;
+}
+.message-box textarea{
+  resize:none;
+  height:120px;
+}
+.message-box button{
+  width:100%;
+  margin-top:15px;
+  padding:15px;
+  border:none;
+  border-radius:30px;
+  background:#25D366;
+  color:#fff;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+.message-box button:hover{
+  background:#1ebe5d;
+  transform:translateY(-2px);
+}
+
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <img src="IMAGE ABBAS.jpg" alt="Profile Picture">
+  <h1>ABBAS ZAMAN</h1>
+  <h2>Multi-Skilled Freelancer</h2>
+  <p>Transforming ideas into stunning designs and professional visuals using Canva, Social Media Design & AI-assisted tools.</p>
+  <div class="buttons">
+    <a class="btn btn-whatsapp" href="https://wa.me/03189611030" target="_blank">💬 WhatsApp</a>
+    <a class="btn btn-email" 
+   href="https://mail.google.com/mail/?view=cm&fs=1&to=abbaszaman031896@gmail.com" 
+   target="_blank">
+   ✉️ Email
+</a>
+
+    
+  </div>
+</section>
+
+<!-- About Me -->
+<section>
+  <h2 class="section-title">About Me</h2>
+  <p class="section-subtitle">Professional designer & content creator</p>
+  <div class="about-card">
+    Hello! I'm ABBAS ZAMAN, a versatile freelance designer with experience in Canva, YouTube thumbnails, Logo design, Social Media graphics, MS Office, AI-assisted design, and more. I create professional, client-ready visuals that convert ideas into reality.
+  </div>
+</section>
+
+<!-- Skills -->
+<section>
+  <h2 class="section-title">Skills</h2>
+  <p class="section-subtitle">Comprehensive design and office expertise</p>
+  <div class="skills-grid">
+    <div class="skill-card">🎨<p class="skill-name">Graphic Design</p></div>
+    <div class="skill-card">🎬<p class="skill-name">YouTube Thumbnails</p></div>
+    <div class="skill-card">🏷️<p class="skill-name">Logo Design</p></div>
+    <div class="skill-card">📸<p class="skill-name">Instagram Posts & Stories</p></div>
+    <div class="skill-card">👥<p class="skill-name">Facebook Post Design</p></div>
+    <div class="skill-card">🎵<p class="skill-name">TikTok Content</p></div>
+    <div class="skill-card">💫<p class="skill-name">Social Media Creatives</p></div>
+    <div class="skill-card">📢<p class="skill-name">Ad Creatives</p></div>
+    <div class="skill-card">🎯<p class="skill-name">Brand Identity</p></div>
+    <div class="skill-card">📊<p class="skill-name">Presentations</p></div>
+    <div class="skill-card">📖<p class="skill-name">Ebook Design</p></div>
+    <div class="skill-card">💼<p class="skill-name">Business Cards</p></div>
+    <div class="skill-card">📄<p class="skill-name">Flyers & Posters</p></div>
+    <div class="skill-card">🎥<p class="skill-name">Video Editing</p></div>
+    <div class="skill-card">🤖<p class="skill-name">AI-assisted Design</p></div>
+    <div class="skill-card">🌐<p class="skill-name">Website Design</p></div>
+    <div class="skill-card">📝<p class="skill-name">MS Word</p></div>
+    <div class="skill-card">📊<p class="skill-name">MS Excel</p></div>
+    <div class="skill-card">🎞️<p class="skill-name">MS PowerPoint</p></div>
+  </div>
+</section>
+
+<!-- Services -->
+<section>
+  <h2 class="section-title">Services I Offer</h2>
+  <p class="section-subtitle">Professional solutions tailored for your needs</p>
+  <div class="services-grid">
+    <div class="service-card">🎨<h3 class="service-title">Graphic Design</h3><p class="service-description">Custom templates and visual content for brands, social media, and personal projects.</p></div>
+    <div class="service-card">📱<h3 class="service-title">Social Media Packages</h3><p class="service-description">Instagram, Facebook, TikTok complete design packages for engagement & growth.</p></div>
+    <div class="service-card">🎬<h3 class="service-title">YouTube Thumbnails</h3><p class="service-description">Eye-catching thumbnails for views and clicks.</p></div>
+    <div class="service-card">🏷️<h3 class="service-title">Logo & Brand Identity</h3><p class="service-description">Professional logos & brand identity for businesses.</p></div>
+    <div class="service-card">💼<h3 class="service-title">Presentation & Office Work</h3><p class="service-description">PowerPoint, Word, Excel solutions for business & education.</p></div>
+    <div class="service-card">🌐<h3 class="service-title">Website Design</h3><p class="service-description">Create beautiful, responsive websites using Canva tools.</p></div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section>
+  <h2 class="section-title">Portfolio</h2>
+  <p class="section-subtitle">Recent projects & works</p>
+  <div class="portfolio-grid">
+    <div class="portfolio-item"><div class="portfolio-image">🎬</div><div class="portfolio-info"><h3 class="portfolio-title">YouTube Thumbnail Set</h3><p class="portfolio-category">Social Media</p></div></div>
+    <div class="portfolio-item"><div class="portfolio-image" style="background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);">🏷️</div><div class="portfolio-info"><h3 class="portfolio-title">Brand Logo Package</h3><p class="portfolio-category">Logo Design</p></div></div>
+    <div class="portfolio-item"><div class="portfolio-image" style="background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);">📸</div><div class="portfolio-info"><h3 class="portfolio-title">Instagram Templates</h3><p class="portfolio-category">Social Media</p></div></div>
+    <div class="portfolio-item"><div class="portfolio-image" style="background:linear-gradient(135deg,#43e97b 0%,#38f9d7 100%);">💼</div><div class="portfolio-info"><h3 class="portfolio-title">Business Presentation</h3><p class="portfolio-category">PowerPoint Design</p></div></div>
+    <div class="portfolio-item"><div class="portfolio-image" style="background:linear-gradient(135deg,#fa709a 0%,#fee140 100%);">📄</div><div class="portfolio-info"><h3 class="portfolio-title">Marketing Flyer</h3><p class="portfolio-category">Print Design</p></div></div>
+    <div class="portfolio-item"><div class="portfolio-image" style="background:linear-gradient(135deg,#30cfd0 0%,#330867 100%);">🌐</div><div class="portfolio-info"><h3 class="portfolio-title">Canva Website</h3><p class="portfolio-category">Web Design</p></div></div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section>
+  <h2 class="section-title">Client Reviews</h2>
+  <p class="section-subtitle">What my clients say</p>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><p class="review-text">Abbas delivered amazing work on time! Highly recommend for Canva & Social Media design.</p></div>
+    <div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><p class="review-text">Professional, creative, and very reliable freelancer. Excellent communication.</p></div>
+    <div class="review-card"><div class="review-stars">⭐⭐⭐⭐⭐</div><p class="review-text">Quality work, met all deadlines, and great design sense.</p></div>
+  </div>
+</section>
+
+
+<!-- SEND MESSAGE SECTION START -->
+<section class="send-message-section">
+  <h2>Send Message</h2>
+  <p style="margin-bottom:30px; color:#34495e; font-size:16px;">Direct WhatsApp Message to Abbas</p>
+
+  <div class="message-box">
+    <input type="text" id="userName" placeholder="Your Name">
+    <textarea id="userMessage" placeholder="Your Message"></textarea>
+    <button onclick="sendWhatsAppMessage()">Send Message</button>
+  </div>
+</section>
+<!-- SEND MESSAGE SECTION END -->
+
+<script>
+function sendWhatsAppMessage(){
+  var name = document.getElementById("userName").value.trim();
+  var message = document.getElementById("userMessage").value.trim();
+
+  if(name === "" || message === ""){
+    alert("Please enter your name and message");
+    return;
+  }
+
+  var phoneNumber = "923189611030"; // 👈 اپنا WhatsApp نمبر یہاں ڈالیں
+
+  var finalMessage = "Hello, my name is " + name + ". " + message;
+  var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(finalMessage);
+
+  window.open(whatsappURL, "_blank");
+}
+</script>
+
+<style>
+/* Message Box Upgrade */
+.send-message-section{
+  padding:80px 20px;
+  background:#f4f6f8;
+  text-align:center;
+}
+.message-box{
+  max-width:500px;
+  margin:auto;
+  background:#0b1c2d;
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+.message-box input,
+.message-box textarea{
+  width:100%;
+  padding:14px;
+  margin:12px 0;
+  border:none;
+  border-radius:12px;
+  font-size:15px;
+  outline:none;
+}
+.message-box textarea{
+  resize:none;
+  height:120px;
+}
+.message-box button{
+  width:100%;
+  margin-top:15px;
+  padding:15px;
+  border:none;
+  border-radius:30px;
+  background:#25D366;
+  color:#fff;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+.message-box button:hover{
+  background:#1ebe5d;
+  transform:translateY(-2px);
+}
+
+</style>
+</body>
+</html>
